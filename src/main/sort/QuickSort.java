@@ -4,6 +4,8 @@ package main.sort;
  * Created by JAESANG_MON on 2019-02-17.
  */
 public class QuickSort {
+    // {69, 10, 30, 2, 16, 8, 31, 22};
+
     public static int partition(int arr[], int left, int right) {
 
         int pivot = arr[(left + right) / 2];
@@ -16,7 +18,12 @@ public class QuickSort {
                 int temp = arr[left];
                 arr[left] = arr[right];
                 arr[right] = temp;
+                for (int ret : arr) {
+                    System.out.print(ret + " ");
+                }
             }
+
+            System.out.println();
         }
 
         return left;
@@ -38,7 +45,14 @@ public class QuickSort {
     //
     public static void main(String[] args) {
         int[] arrs = {69, 10, 30, 2, 16, 8, 31, 22};
+        System.out.print(" START ");
+
+        for (int ret : arrs) {
+            System.out.print(ret + " ");
+        }
+        System.out.println();
         quickSort(arrs, 0, arrs.length - 1);
+        System.out.print(" END ");
 
         for (int ret : arrs) {
             System.out.print(ret + " ");
