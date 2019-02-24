@@ -1,10 +1,19 @@
 package main.easy;
 
 /**
- * Created by JAESANG_MON on 2019-02-24.
+ * Write a function to find the longest common prefix string amongst an array of strings.
+ * If there is no common prefix, return an empty string "".
+ *
+ * https://leetcode.com/problems/longest-common-prefix/
  */
 public class LongestCommonPrefix {
 
+    /**
+     * Runtime: 4 ms, faster than 99.85% of Java online submissions for Longest Common Prefix.
+     * Memory Usage: 38.9 MB, less than 17.65% of Java online submissions for Longest Common Prefix.
+     * @param strs ["flower", "flow", "flight"]
+     * @return fl
+     */
     public static String longestCommonPrefix(String[] strs) {
         if (strs.length == 0) return "";
 
