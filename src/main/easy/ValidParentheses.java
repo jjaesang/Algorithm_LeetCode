@@ -4,11 +4,27 @@ import java.util.HashMap;
 import java.util.Stack;
 
 /**
- * Created by JAESANG_MON on 2019-02-26.
+ * Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+ An input string is valid if:
+
+ Open brackets must be closed by the same type of brackets.
+ Open brackets must be closed in the correct order.
+ Note that an empty string is also considered valid.
+
+ https://leetcode.com/problems/valid-parentheses/
  */
 public class ValidParentheses {
 
-
+    /**
+     * Runtime: 4 ms, faster than 98.12% of Java online submissions for Valid Parentheses.
+     * Memory Usage: 37.2 MB, less than 22.70% of Java online submissions for Valid Parentheses.
+     * @param s "()[]{}"
+     * @return false
+     *
+     * Input: "([)]"
+     * Output: false
+     */
     public boolean isValid(String s) {
         HashMap<Character, Character> mappings = new HashMap<Character, Character>();
         mappings.put(')', '(');
