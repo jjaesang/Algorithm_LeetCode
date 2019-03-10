@@ -8,7 +8,7 @@ package main.medium;
  * Determine if you are able to reach the last index.
  * https://leetcode.com/problems/jump-game/solution/
  */
-public class JumpGame {
+public class JumpGame_DP {
 
 
     enum Index {
