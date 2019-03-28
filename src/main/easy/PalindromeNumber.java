@@ -31,7 +31,7 @@ public class PalindromeNumber {
             return false;
 
         /**
-         * 들어오는 input에 대해 modulur와 divide를 통해 숫자를 뒤집으면.. Integer.MAX_VALUE의 overflow 날 수 잇음
+         * 들어오는 input에 대해 modular와 divide를 통해 숫자를 뒤집으면.. Integer.MAX_VALUE의 overflow 날 수 잇음
          * 2,147,483,647 를 뒤집으면 ... 7,463,847,412 바로  overflow..
          * 그래서 들어온 input의 반만 나눠서 뒤집고, 반 반 비교하자.. ( = 여기서 생각해야할게, 자리숫가 짝수일때, 홀수 일때 )
          * 짝수이면 그냥 똑같겠지만.. 홀수 라면..
