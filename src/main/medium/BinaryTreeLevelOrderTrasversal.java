@@ -1,6 +1,5 @@
 package main.medium;
 
-import main.easy.MaximumDepthOfBinaryTree;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
