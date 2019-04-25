@@ -7,10 +7,15 @@ import java.util.List;
 import java.util.Queue;
 
 /**
- * Created by jaesang on 2019-04-25.
+ * Given a binary tree, return the level order traversal of its nodes' values. (ie, from left to right, level by level).
+ * https://leetcode.com/problems/binary-tree-level-order-traversal/
  */
 public class BinaryTreeLevelOrderTrasversal {
 
+    /**
+     * Runtime: 1 ms, faster than 75.29% of Java online submissions for Binary Tree Level Order Traversal.
+     * Memory Usage: 37.3 MB, less than 65.79% of Java online submissions for Binary Tree Level Order Traversal.
+     */
     public class TreeNode {
         int val;
         TreeNode left;
@@ -21,15 +26,25 @@ public class BinaryTreeLevelOrderTrasversal {
         }
     }
 
+    /**
+     *
+     * @param root  [3,9,20,null,null,15,7]
+     * @return
+     *   [
+            [3],
+            [9,20],
+            [15,7]
+        ]
+     */
     public List<List<Integer>> levelOrder(TreeNode root) {
 
+        List<List<Integer>> resultList = new ArrayList<List<Integer>>();
+
         if (root == null)
-            return null;
+            return resultList;
 
         Queue<TreeNode> queue = new LinkedList<TreeNode>();
         queue.add(root);
-
-        List<List<Integer>> resultList = new ArrayList<List<Integer>>();
 
         while(!queue.isEmpty()){
             int levelNum = queue.size();
