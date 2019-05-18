@@ -28,10 +28,11 @@ public class IntersectionTwoLinkedList {
      * @return
      */
     public ListNode getIntersectionNodeStack(ListNode headA, ListNode headB) {
-
-        // 두개의 LinkedList를 Stack에 넣어둠
-        // 왜냐면 두개의 리스트가 교집합이 있다면 뒤에서 부터 확인했을 때 다른 ListNode일 경우
-        // 그 전의 ListNode가 IntersectionNode로 간주
+        /**
+         * 두개의 LinkedList를 Stack에 넣어둠
+         * 왜냐면 두개의 리스트가 교집합이 있다면 뒤에서 부터 확인했을 때 다른 ListNode일 경우
+         * 그 전의 ListNode가 IntersectionNode로 간주
+         */
         Stack<ListNode> nodeAStack = new Stack<>();
         Stack<ListNode> nodeBStack = new Stack<>();
 
