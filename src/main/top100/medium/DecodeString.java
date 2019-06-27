@@ -17,6 +17,11 @@ import java.util.Stack;
  * https://leetcode.com/problems/decode-string/
  */
 public class DecodeString {
+
+    private boolean isDigit(char ch) {
+        return ch >= '0' && ch <= '9';
+    }
+
     /**
      * s = "3[a2[c]]", return "accaccacc".
      * s = "2[abc]3[cd]ef", return "abcabccdcdcdef".
@@ -24,8 +29,7 @@ public class DecodeString {
      * @param s 3[a]2[bc]
      * @return aaabcbc
      */
-
-
+/*
     public String decodeString(String s) {
 
         Stack<Character> stack = new Stack<>();
@@ -33,10 +37,67 @@ public class DecodeString {
 
         for (int i = 0; i < strLength; i++) {
             char token = s.charAt(i);
+
             //check brackets;
             // do something tomorrow..
         }
         return "";
     }
+*/
+
+    public String decodeString(String s) {
+
+        Stack<String> st = new Stack<>();
+
+        for(int i=0; i<s.length(); i++){
+
+            if(s.charAt(i) != ']'){
+                st.push(s.charAt(i) + "");
+            }else{
+                StringBuilder sbText = new StringBuilder();
+                StringBuilder sbNum = new StringBuilder();
+                while(!st.peek().equals("[")){
+                    sbText.insert(0, st.pop());
+                }
+                st.pop();
+                while(!st.isEmpty() && isNumeric(st.peek())){
+                    String n = st.pop();
+                    sbNum.insert(0, n);
+                }
+                st.push(strMultiplier(sbText.toString(), sbNum.toString()));
+            }
+        }
+
+        StringBuilder f = new StringBuilder();
+        while(!st.isEmpty()){
+            f.insert(0, st.pop());
+        }
+        return f.toString();
+    }
+
+    public static boolean isNumeric(String str) {
+        try {
+            Integer.parseInt(str);
+            return true;
+        } catch(NumberFormatException e){
+            return false;
+        }
+    }
+
+    public static String strMultiplier(String str, String num){
+        int t = 1;
+        try {
+            t = Integer.parseInt(num);
+        }catch(NumberFormatException e){
+            t = 1;
+        }
+        StringBuilder sb = new StringBuilder();
+        while(t != 0){
+            sb.append(str);
+            t--;
+        }
+        return sb.toString();
+    }
+
 
 }
